@@ -18,9 +18,9 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
               size: 'invisible',
               badge: 'bottomleft'
             }
-          },
           defaultCountry: 'BD',
           whitelistedCountries: ['BD', '+880']
+        },
         ],
       }; 
 ui.start('#firebaseui-auth-container', uiConfig);
