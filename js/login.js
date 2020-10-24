@@ -11,8 +11,16 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
         },
         signInFlow: 'popup',
         signInSuccessUrl: 'index.html',
-        signInOptions: [
-          firebase.auth.EmailAuthProvider.PROVIDER_ID
+        signInOptions: [{
+            provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+            recaptchaParameters: {
+              type: 'image',
+              size: 'invisible',
+              badge: 'bottomleft'
+            }
+          },
+          defaultCountry: 'BD',
+          whitelistedCountries: ['BD', '+880']
         ],
       }; 
 ui.start('#firebaseui-auth-container', uiConfig);
