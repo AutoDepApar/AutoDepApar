@@ -13,8 +13,8 @@
         
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@1,600&display=swap">
-         <!-- Custom styles for this template -->
-         <link href="../css/style.css" rel="stylesheet"> 
+         <link href="../css/style.css" rel="stylesheet">
+         <link rel="stylesheet" href="../css/modal.css"> 
      </head>
      <body class="bg-grad">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -35,6 +35,7 @@
               <a class="nav-link" href="../colorpicker/color.html">Color Picker&copy;</a>
             </li>
           </ul>
+          <button id="dark" class="btn btn-outline-light" type="button" onclick="darkMode()">Dark Mode</button>
             <button class="btn btn-outline-danger" type="button" onclick="mainApp.logOut();">Log Out</button>
         </div>
       </nav>
@@ -95,7 +96,7 @@
             </div>
             <div id="collapse1" class="collapse" aria-labelledby="headOne" data-parent="#accordionFAQ">
               <div class="accordion-content">
-                 <a href="#" class="btn btn-secondary btn-lg btn-block" type="button">BCS</a>
+                 <a id="myBtn" class="btn btn-secondary btn-lg btn-block" type="button">BCS</a>
               </div>
             </div>
                         <div id="collapse1" class="collapse" aria-labelledby="headOne" data-parent="#accordionFAQ">
@@ -121,13 +122,13 @@
                    <a href="#" class="btn btn-success btn-lg btn-block" type="button">Performer of the Day</a>
                  </div>
                  <div id="live1" class="collapse">
-                  <a href="#" class="btn btn-success btn-lg btn-block" type="button">English Triva</a>
+                  <a href="https://forms.gle/4VfsPKxSQz2tesqy8" class="btn btn-success btn-lg btn-block" type="button">English Triva</a>
                 </div>
                 <div id="live1" class="collapse">
-                  <a href="#" class="btn btn-success btn-lg btn-block" type="button">Reaction Quiz</a>
+                  <a href="https://forms.gle/kwRvbEA3UYfS8A5D6" class="btn btn-success btn-lg btn-block" type="button">Reaction Quiz</a>
                 </div>
                 <div id="live1" class="collapse">
-                  <a href="#" class="btn btn-success btn-lg btn-block" type="button">শব্দ খেলা</a>
+                  <a href="https://forms.gle/DF7suAxmiHrVhCUV9" class="btn btn-success btn-lg btn-block" type="button">শব্দ খেলা</a>
                 </div>
               </div>
             </div>
@@ -145,7 +146,7 @@
               <div class="accordion-content">
                  <a data-toggle="collapse" data-target="#sc1" aria-controls="sc1" aria-expanded="false" class="btn collapsed btn-secondary btn-lg btn-block" type="button">SC</a>
                         <div id="sc1" class="collapse">
-                   <a href="#" class="btn btn-success btn-lg btn-block" type="button">গণিতের গোলক ধাঁধা</a>
+                   <a href="https://forms.gle/DVRtFk5zMn9PxjPD6" class="btn btn-success btn-lg btn-block" type="button">গণিতের গোলক ধাঁধা</a>
                        </div>
                         <div id="sc1" class="collapse">
                    <a href="#" class="btn btn-success btn-lg btn-block" type="button">Tech Hunt</a>
@@ -154,16 +155,16 @@
                    <a href="#" class="btn btn-success btn-lg btn-block" type="button">Know your Scientist</a>
                  </div>
                        <div id="sc1" class="collapse">
-                   <a href="#" class="btn btn-success btn-lg btn-block" type="button">Science Fact</a>
+                   <a href="https://forms.gle/n12ouHdngiQj1ScF8" class="btn btn-success btn-lg btn-block" type="button">Science Fact</a>
                        </div>
                        <div id="sc1" class="collapse">
-                   <a href="#" class="btn btn-success btn-lg btn-block" type="button">Arduino Quiz</a>
+                   <a href="https://forms.gle/r7L5z5RTJxNrPGMMA" class="btn btn-success btn-lg btn-block" type="button">Arduino Quiz</a>
                        </div>
                        <div id="sc1" class="collapse">
-                        <a href="#" class="btn btn-success btn-lg btn-block" type="button">Space Digest</a>
+                        <a href="https://forms.gle/hF3xxgug3sGtK1Gr7" class="btn btn-success btn-lg btn-block" type="button">Space Digest</a>
                             </div>
                             <div id="sc1" class="collapse">
-                              <a href="#" class="btn btn-success btn-lg btn-block" type="button">Tech Hunt</a>
+                              <a href="https://forms.gle/E5ME94J27Z7M8nMGA" class="btn btn-success btn-lg btn-block" type="button">Tech Hunt</a>
                                   </div>
                        <div id="sc1" class="collapse">
                    <a href="https://forms.gle/hF3xxgug3sGtK1Gr7" class="btn btn-success btn-lg btn-block" type="button">Space Digest</a>
@@ -182,6 +183,18 @@
 
           </div>
           <br><br><br>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img src="../img/UnderConstruction.png" width="100%" height="auto" alt="image">
+    <h4 style="margin: auto;">Stay Tuned 😎</h4> 
+  </div>
+
+</div>
           <p> Having some issues?
 <a href="mailto:autodeapar@gmail.com"><b><u>Email Us</u></b></a></p>
 </div>
@@ -196,43 +209,18 @@
          </div>
      </div>
     </div>
-         </div><!-- /.container -->
-
-
+         </div>
     <script src="../js/firebase.js"></script>
-    <script>
-      var mainApp = {};
-(function() {
-    var firebase = app_firebase;
-var uid = null;
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-    uid = user.uid;
-  }else {
-      window.location.replace("../login.html");
-  }
-});
-    function logOut(){
-        firebase.auth().signOut();
-    }
-    mainApp.logOut = logOut;
-})()
-    </script>
+    <!-- <script src="../js/dm.js"></script> -->
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="//inc.freefind.com/inc/ffse-overlay.min.js" async></script>
       <div class="cursor"></div>
   <div class="cursor2"></div>
-  <script>
-    var cursor = document.querySelector(".cursor");
-    var cursor2 = document.querySelector(".cursor2");
-    document.addEventListener("mousemove",function(e){
-      cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-    });
-  </script>
+  <script src="../js/cursor.js"></script>
+  <script src="../js/modal.js"></script>
+  <script src="../js/darkmode.js"></script>
    </body>
  </html> 
 
