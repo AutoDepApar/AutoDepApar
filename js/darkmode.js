@@ -7,6 +7,6 @@ function darkMode() {
     x.innerHTML = "Dark Mode";
   } else {
     x.style.display = "block";
-    x.innerHTML = "Normal Mode";
+    x.innerHTML = "Light Mode";
   }
   }
