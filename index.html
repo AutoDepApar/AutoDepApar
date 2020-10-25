@@ -11,7 +11,8 @@
 <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@1,600&display=swap">
-         <!-- Custom styles for this template -->
+ <link rel="stylesheet" href="css/modal.css"> 
+ <link rel="stylesheet" href="css/modal1.css"> 
          <link href="css/style.css" rel="stylesheet"> 
      </head>
      <body class="bg-grad">
@@ -57,33 +58,38 @@
         </div>
         <div id="collapse5" class="collapse" aria-labelledby="headOne" data-parent="#accordionFAQ">
           <div class="accordion-content">
-             <a href="#" class="btn btn-secondary btn-lg btn-block" type="button">Lock Down Live Poster</a>
+             <a id="myBtn" class="btn btn-secondary btn-lg btn-block" type="button">Lock Down Live Poster</a>
           </div>
         </div>
         <div id="collapse5" class="collapse" aria-labelledby="headOne" data-parent="#accordionFAQ">
           <div class="accordion-content">
-             <a href="#" class="btn btn-secondary btn-lg btn-block" type="button">Live Class Story</a>
+             <a id="myBtn1" class="btn btn-secondary btn-lg btn-block" type="button">Live Class Story</a>
           </div>
         </div>
       </div>
 
-        <!-- <div class="accordion accordion-gap" id="accordionFAQ">
-          <div class="accordion-item wow fadeInRight">
-            <div class="accordion-trigger" id="headOne">
-              <button class="btn collapsed btn-dark btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">Quiz Generator</button>
-            </div>
-        </div>
-            <div id="collapse1" class="collapse" aria-labelledby="headOne" data-parent="#accordionFAQ">
-              <div class="accordion-content">
-                 <a href="#" class="btn btn-secondary btn-lg btn-block" type="button">HR Team</a>
-              </div>
-            </div>
-            <div id="collapse1" class="collapse" aria-labelledby="headOne" data-parent="#accordionFAQ">
-              <div class="accordion-content">
-                 <a href="https://cutt.ly/quiz-gen" class="btn btn-secondary btn-lg btn-block" type="button">Quiz with React</a>
-              </div>
-            </div>
-          </div> -->
+ <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img src="../img/UnderConstruction.png" width="100%" height="auto" alt="image">
+    <h4 style="margin: auto;">Stay Tuned 😎</h4> 
+  </div>
+
+</div>
+<!-- The Modal1 -->
+<div id="myModal1" class="modal1">
+
+  <!-- Modal content1 -->
+  <div class="modal-content1">
+    <span class="close1">&times;</span>
+    <img src="../img/UnderConstruction.png" width="100%" height="auto" alt="image">
+    <h4 style="margin: auto; text-align: center;">Stay Tuned 😎</h4> 
+  </div>
+
+</div>
           <a href="cetificate/index.html" class="btn btn-dark btn-lg btn-block" type="button">Certificate Generator</a>
           <a href="DM/index.html" class="btn btn-dark btn-lg btn-block" type="button">DM Team</a>
           <br><br><br>
@@ -112,6 +118,8 @@
       <div class="cursor"></div>
   <div class="cursor2"></div>
   <script src="js/cursor.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/modal1.js"></script>
   <script src="js/darkmode.js"></script>
    </body>
  </html>
