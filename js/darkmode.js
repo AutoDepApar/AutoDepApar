@@ -3,17 +3,17 @@
 //custom settings
 
   const options = {
-bottom: '64px',
+bottom: '32px',
 right: '32px',
 left: 'unset',
-time: '0.5s',
+time: '0.3s',
 mixColor: '#fff',
 backgroundColor: '#fff',
 buttonColorDark: '#100f2c',
 buttonColorLight: '#fff',
 saveInCookies: true,
 label: '🌓',
-autoMatchOsTheme: false
+autoMatchOsTheme: true
 }
 const darkmode = new Darkmode(options);
 darkmode.showWidget();
