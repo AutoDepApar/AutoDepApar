@@ -15,3 +15,6 @@ var app_firebase = {};
 
   app_firebase = firebase;
 })()
+document.addEventListener("contextmenu", function(e) {
+  e.preventDefault();
+});
