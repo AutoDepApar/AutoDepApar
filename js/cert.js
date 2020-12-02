@@ -7,7 +7,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is signed in.
     uid = user.uid;
   }else {
-      window.location.replace("../cert-auth.html");
+      window.location.replace("../index.html");
   }
 });
     function logOut(){
