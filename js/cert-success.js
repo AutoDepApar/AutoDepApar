@@ -12,15 +12,13 @@ function toggleSignIn() {
       alert('Please enter a password.');
       return;
     }
-    // Sign in with email and pass.
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-      // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
       if (errorCode === 'auth/wrong-password') {
         alert('Wrong password.');
       } else {
-        alert(errorMessage);
+        alert('You Don\'t have Access. To get access, Kindly Contact\nMaheyan Mridul \nEmail : developer@aparsclassroom.com');
       }
       console.log(error);
       document.getElementById('quickstart-sign-in').disabled = false;
@@ -29,42 +27,14 @@ function toggleSignIn() {
   document.getElementById('quickstart-sign-in').disabled = true;
 }
 function initApp() {
-  // Listening for auth state changes.
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
   window.location.replace("certificate/index.html");
-    } else {
-      // User is signed out.
-      document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-      document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-      document.getElementById('quickstart-account-details').textContent = 'null';
-    }
-    document.getElementById('quickstart-sign-in').disabled = false;
+    } 
   });
-  // [END authstatelistener]
-
   document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
 }
 
 window.onload = function() {
   initApp();
 };
-
-
-
-
-
-
-
-var mainApp = {};
-(function() {
-    var firebase = app_firebase;
-var uid = null;
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-    uid = user.uid;
-    window.location.replace("certificate/index.html");
-  }
-});
-})()
