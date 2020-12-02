@@ -31,7 +31,6 @@ function toggleSignIn() {
 function initApp() {
   // Listening for auth state changes.
   firebase.auth().onAuthStateChanged(function(user) {
-    document.getElementById('quickstart-verify-email').style.display = 'none';
     if (user) {
   window.location.replace("certificate/index.html");
     } else {
