@@ -1,7 +1,3 @@
-var mainApp = {};
-(function() {
-    var firebase = app_firebase;
-var uid = null;
 auth.onAuthStateChanged(user => {
   if (user) {
     db.collection('certData').get().then(snapshot => {
@@ -11,13 +7,11 @@ auth.onAuthStateChanged(user => {
     window.location.replace("../index.html");
   }
 })
-function logOut(){
-  firebase.auth().signOut();
-}
-mainApp.logOut = logOut;
-})()
-
-
+const logout = document.querySelector('#logout');
+logout.addEventListener('click', (e) => {
+  auth.signOut();
+  window.location.replace("../index.html");
+});
 // DOM elements
 const certList = document.getElementById('certData');
 
