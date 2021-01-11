@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@1,600&display=swap">
   <link rel="stylesheet" href="../css/cert.css">
-  <title>GameGuidez</title>
+  <title>Certificate Automation | Automation Dept.</title>
 </head>
 <body class="bg-grad">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -76,31 +76,26 @@
     // update firestore settings
     db.settings({ timestampsInSnapshots: true });
   </script>
-  <!-- Compiled and minified JavaScript -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
   <script>
-    db.collection('guides').get().then(snapshot => {
-  setupGuides(snapshot.docs);
-});    
+   
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
   if (user) {
-    console.log('user logged in: ', user);
-    // db.collection('guides').get().then(snapshot => {
-    //   setupGuides(snapshot.docs);
-    // });    
+    db.collection('guides').get().then(snapshot => {
+      setupGuides(snapshot.docs);
+    });    
   } else {
-    console.log('user logged out');
     setupGuides([]);
+    window.location.replace("../index.html");
   }
 })
 
-// logout
-// const logout = document.querySelector('#logout');
-// logout.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   auth.signOut();
-// });
+const logout = document.getElementById('logout');
+logout.addEventListener('click', (e) => {
+  e.preventDefault();
+  auth.signOut();
+  window.location.replace("../index.html");
+});
 
   </script>
   <script>
