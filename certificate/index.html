@@ -3,6 +3,7 @@
      <head>
       <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
       <script src="../js/firebase2.js"></script>
       <script src="../js/cert.js"></script>
          <meta charset="utf-8">
@@ -104,36 +105,8 @@ h4 {
      <br>
              <h2 class="featurette-heading">Certificate Generator</h2> 
             <br>
-            <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="../img/certificate-preview/digi1.jpg" alt="Card image">
-                <div class="card-img-overlay">
-                  <h4 class="card-title">Campaign Certificate</h4>
-                  <a id="c1er" target="_blank" class="btn btn-outline-success">Click Here</a>
-                </div>
-              </div>
-
-
-              <div class="card">
-                <img class="card-img-top" src="../img/certificate-preview/digi2.jpg" alt="Card image">
-                <div class="card-img-overlay">
-                    <h4 class="card-title">Promotional Certificate</h4>
-                    <a id="c1er2" target="_blank" class="btn btn-outline-success">Click Here</a>
-                </div>
-              </div>
+            <div id="certData">
             </div>
-
-            <div class="card-deck">
-              <div class="card">
-                <img class="card-img-bottom" src="../img/certificate-preview/digi3.jpg" alt="Card image">
-                <div class="red">
-                <div class="card-img-overlay">
-                    <h4 class="card-title-danger">10MS X LifeSpring Cert.</h4>
-                    <a id="c3" target="_blank" class="btn btn-outline-danger">Click Here</a>
-                </div>
-              </div>
-            </div>
-          </div>
           <br><br><br>
 
 
@@ -152,12 +125,11 @@ h4 {
          </div>
      </div>
     </div>
-         </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="../js/darkmode.js"></script>
+<!-- <script src="../js/darkmode.js"></script> -->
 
    </body>
  </html> 
