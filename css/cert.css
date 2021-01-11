@@ -1,0 +1,57 @@
+* {
+	margin: 0;
+	padding: 0;
+  box-sizing: border-box;
+  font-family:  'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+.container {
+  cursor: pointer;
+}
+.featurette-heading, .navbar-brand {
+	font-family:  'Poppins', sans-serif;
+}
+
+.bg-grad {
+	background-color: #f0f0f0;
+}
+
+.card-img-top,
+.card-img-bottom {
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.5);
+}
+
+.featurette-heading {
+	text-align: center;
+}
+h4 {
+    color: seagreen;
+}
+.container .btn {
+	margin-bottom: 10px;
+	border-radius: 60px
+}
+.card-title-danger {
+  color: red;
+}
+
+.navbar .btn {
+	margin: 4px;
+}
+.card-deck {
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 760px) {
+  .card-img-overlay a {
+    background-color: seagreen;
+    color: white;
+  }
+  .red .card-img-overlay a {
+    background-color: red;
+    color: white;
+  }
+  .card-deck {
+  margin-bottom: 5px;
+}
+}

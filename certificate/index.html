@@ -1,135 +1,140 @@
-<!DOCTYPE html>
- <html lang="en">
-     <head>
-      <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
-      <script src="../js/firebase2.js"></script>
-      <script src="../js/cert.js"></script>
-         <meta charset="utf-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-         <meta name="description" content="DM Team Page">
-         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-         <meta name="author" content="">
-
-         <title>DM Team | Automation Dept.&reg;</title>
- 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@1,600&display=swap">
-         
-<style>
-  * {
-	margin: 0;
-	padding: 0;
-  box-sizing: border-box;
-  font-family:  'Montserrat', sans-serif;
-  scroll-behavior: smooth;
-}
-.container {
-  cursor: pointer;
-}
-.featurette-heading, .navbar-brand {
-	font-family:  'Poppins', sans-serif;
-}
+  <link rel="stylesheet" href="../css/cert.css">
+  <title>GameGuidez</title>
+</head>
+<body class="bg-grad">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="../index.html">Automation Dept.&reg;</a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-.bg-grad {
-	background-color: #f0f0f0;
-}
-
-.card-img-top,
-.card-img-bottom {
-  box-shadow: 0px 10px 15px rgba(0,0,0,0.5);
-}
-
-.featurette-heading {
-	text-align: center;
-}
-h4 {
-    color: seagreen;
-}
-.container .btn {
-	margin-bottom: 10px;
-	border-radius: 60px
-}
-.card-title-danger {
-  color: red;
-}
-
-.navbar .btn {
-	margin: 4px;
-}
-.card-deck {
-  margin-bottom: 25px;
-}
-
-@media only screen and (max-width: 760px) {
-  .card-img-overlay a {
-    background-color: seagreen;
-    color: white;
-  }
-  .red .card-img-overlay a {
-    background-color: red;
-    color: white;
-  }
-  .card-deck {
-  margin-bottom: 5px;
-}
-}
-        </style>
-     </head>
-     <body class="bg-grad">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="../index.html">Automation Dept.&reg;</a>
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="navbar-collapse collapse" id="navbarColor01">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../colorpicker/color.html">Color Picker&copy;</a>
-            </li>
-          </ul>
-            <button class="btn btn-outline-danger" type="button" id="logout">Log Out</button>
-        </div>
-      </nav>
- <br>
- <div class="container">
-     <br>
-             <h2 class="featurette-heading">Certificate Generator</h2> 
-            <br>
-            <div id="guides">
-            </div>
-          <br><br><br>
-
-
-
-          <p> Having some issues?
-<a href="mailto:autodeapar@gmail.com"><b><u>Email Us</u></b></a></p>
- </div>
-                 <!-- FOOTER -->
-                 <div class="copyrights">
-                    <div class="container">
-                        <div class="footer-center"> 
-             <footer>
-                 <p class="float-right"><a href="#">Back to top</a></p>
-                 <p>&copy; <script>document.write(new Date().getFullYear());</script> Apar's Automation Department &middot; <a class="link" href="#">Privacy</a> &middot; <a class="link" href="#">Terms</a></p>
-             </footer>
-         </div>
-     </div>
+    <div class="navbar-collapse collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../colorpicker/color.html">Color Picker&copy;</a>
+        </li>
+      </ul>
+        <button class="btn btn-outline-danger" type="button" onclick="mainApp.logOut();">Log Out</button>
     </div>
+  </nav>
+<br>
+<div class="container">
+ <br>
+         <h2 class="featurette-heading">Certificate Generator</h2> 
+        <br>
+  <!-- GUIDE LIST -->
+    <div id="guides">
+    </div>
+  <p> Having some issues?
+    <a href="mailto:autodeapar@gmail.com"><b><u>Email Us</u></b></a></p>
+     </div>
+                     <!-- FOOTER -->
+                     <div class="copyrights">
+                        <div class="container">
+                            <div class="footer-center"> 
+                 <footer>
+                     <p class="float-right"><a href="#">Back to top</a></p>
+                     <p>&copy; <script>document.write(new Date().getFullYear());</script> Apar's Automation Department &middot; <a class="link" href="#">Privacy</a> &middot; <a class="link" href="#">Terms</a></p>
+                 </footer>
+             </div>
+         </div>
+        </div>
+  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB93HESocPC1vGx4YaNW3AIsc4am8yZwOc",
+    authDomain: "certificate-generator-auth.firebaseapp.com",
+    databaseURL: "https://certificate-generator-auth.firebaseio.com",
+    projectId: "certificate-generator-auth",
+    storageBucket: "certificate-generator-auth.appspot.com",
+    messagingSenderId: "818689700970",
+    appId: "1:818689700970:web:cf8d02f14bb1a66e4fc613"
+    };
+    firebase.initializeApp(config);
+    
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    // update firestore settings
+    db.settings({ timestampsInSnapshots: true });
+  </script>
+  <!-- Compiled and minified JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <script>
+    db.collection('guides').get().then(snapshot => {
+  setupGuides(snapshot.docs);
+});    
+// listen for auth status changes
+auth.onAuthStateChanged(user => {
+  if (user) {
+    console.log('user logged in: ', user);
+    // db.collection('guides').get().then(snapshot => {
+    //   setupGuides(snapshot.docs);
+    // });    
+  } else {
+    console.log('user logged out');
+    setupGuides([]);
+  }
+})
+
+// logout
+// const logout = document.querySelector('#logout');
+// logout.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   auth.signOut();
+// });
+
+  </script>
+  <script>
+    // DOM elements
+const guideList = document.getElementById('guides');
+
+// setup guides
+const setupGuides = (data) => {
+
+  let html = '';
+  data.forEach(doc => {
+    const guide = doc.data();
+    const div = `
+    <div class="card-deck">
+    <div class="card">
+      <img class="card-img-top" src="${guide.image}" alt="Card image">
+    
+      <div class="card-img-overlay">
+          <h4 class="card-title-danger">${guide.title}</h4>
+          <a href="${guide.content}" target="_blank" class="btn btn-outline-danger">Click Here</a>
+      
+    </div>
+  </div>
+</div>
+    `;
+    html += div;
+  });
+  guideList.innerHTML = html
+
+};
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- <script src="../js/darkmode.js"></script> -->
-
-   </body>
- </html> 
-
+</body>
+</html>
