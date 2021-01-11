@@ -1,15 +1,26 @@
-
-// listen for auth status changes
+  // listen for auth status changes
 auth.onAuthStateChanged(user => {
   if (user) {
+    console.log('user logged in: ', user);
     db.collection('guides').get().then(snapshot => {
       setupGuides(snapshot.docs);
     });    
   } else {
+    console.log('user logged out');
     setupGuides([]);
-    window.location.replace("../index.html");
   }
 })
+
+// logout
+const logout = document.querySelector('#logout');
+logout.addEventListener('click', (e) => {
+  e.preventDefault();
+  auth.signOut();
+});
+
+
+
+
 // DOM elements
 const guideList = document.getElementById('guides');
 
@@ -37,7 +48,6 @@ const setupGuides = (data) => {
   guideList.innerHTML = html
 
 };
-
 // const logout = document.querySelector('#logout');
 // logout.addEventListener('click', (e) => {
 //   auth.signOut();
