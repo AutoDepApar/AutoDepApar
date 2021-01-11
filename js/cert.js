@@ -51,3 +51,6 @@ html += div;
 });
 guideList.innerHTML = html
 };
+document.addEventListener("contextmenu", function(e) {
+  e.preventDefault();
+});
