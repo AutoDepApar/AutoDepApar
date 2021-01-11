@@ -18,7 +18,7 @@ db.collection('guides').get().then(snapshot => {
 });    
 } else {
 setupGuides([]);
-// window.location.replace("../index.html");
+window.location.replace("../index.html");
 }
 })
 
