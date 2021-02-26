@@ -35,9 +35,9 @@ const setupGuides = (data) => {
     data.forEach(doc => {
         const guide = doc.data();
         const div = `
-<div class="row">
+<div class="card-deck">
 <div class="card">
-  <img class="card-img-bottom" src="${guide.image}" alt="Card image">
+  <img class="card-img-top" src="${guide.image}" alt="${guide.title}">
 
   <div class="card-img-overlay">
       <h4 class="card-title-danger">${guide.title}</h4>
