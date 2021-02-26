@@ -37,7 +37,7 @@ const setupGuides = (data) => {
         const div = `
 <div class="card-deck">
 <div class="card">
-  <img class="card-img-top" src="${guide.image}" height="100px" alt="${guide.title}">
+  <img class="card-img-top img-fluid" src="${guide.image}" height="600px" width="100%" alt="${guide.title}">
 
   <div class="card-img-overlay">
       <h4 class="card-title-danger">${guide.title}</h4>
