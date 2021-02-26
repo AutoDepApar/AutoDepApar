@@ -54,3 +54,9 @@ const setupGuides = (data) => {
 document.addEventListener("contextmenu", function(e) {
     e.preventDefault();
 });
+
+function copy() {
+    var yr = new Date().getFullYear()
+    document.getElementById('year').innerText = yr;
+}
+copy()
